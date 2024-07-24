@@ -52,6 +52,15 @@ public class App {
             if (answer.equals("remove")) {
                 intList.remove(0); //삭제
                 System.out.println("가장 먼저 저장된 연산 결과를 삭제하였습니다");
+                System.out.println(intList.toString()); //확인 출력
+            }
+
+            System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+            answer = sc.next();
+            if (answer.equals("inquiry")) {
+                for (int number:intList){
+                    System.out.print(number + " ");
+                }
                 System.out.println(intList.toString()); //출력
             }
 
