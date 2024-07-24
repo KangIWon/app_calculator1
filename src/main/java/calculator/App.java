@@ -38,6 +38,7 @@ public class App {
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String answer = sc.nextLine();
             if (answer.equals("exit")) {
+                System.out.println("반복을 종료합니다.");
                 break;
             }
         } while (true);
