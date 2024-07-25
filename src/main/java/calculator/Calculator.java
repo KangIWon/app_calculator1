@@ -2,8 +2,9 @@ package calculator;
 import java.util.ArrayList;
 
 public class Calculator {
-    ArrayList<Integer> results = new ArrayList<>();
-    double result = 0;
+    /* 연산 결과를 저장하는 컬렉션 타입 필드를 외부에서 직접 접근 하지 못하도록 수정*/
+    private ArrayList<Integer> results = new ArrayList<>(); //private로 수정
+
     public int calculate(int num1, int num2, char operator) {
 
         int result = 0;
@@ -33,14 +34,20 @@ public class Calculator {
                 break;
         }
 
-        /* 제어문을 활용하여 위 요구사항을 만족할 수 있게 구현합니다.*/
-        System.out.println("결과: " + result);
-
-
-        results.add(result); //결과값 추가
-
-        System.out.println(results.toString()); //출력
-
         return result;
         }
+
+    /* Getter 메서드 구현 */
+    /* Setter 메서드 구현 */
+    public ArrayList<Integer> getResults() { // getResults로 results값 가져오기
+        return results;
     }
+
+    public void setResults(ArrayList<Integer> results) { // setResults로 results값 수정하기
+        this.results = results;
+    }
+
+    public void removeResult(int idx) { // removeResult로 App에서 remove 삭제 연산하는 곳
+        this.results.remove(idx);
+    }
+}

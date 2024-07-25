@@ -1,16 +1,12 @@
 package calculator;
 import java.util.Scanner;
-import java.util.ArrayList;
+
 public class App {
 
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-//        calculator.calculate();
 
         Scanner sc = new Scanner(System.in);
-
-//        ArrayList<Double> intList = new ArrayList<Double>(); // 선언 및 생성
-        int cnt = 0; //카운트
 
         String answer;
         do {
@@ -23,26 +19,25 @@ public class App {
             char operator = sc.next().charAt(0);
 
             int result = calculator.calculate(num1, num2, operator);
+            calculator.getResults().add(result); //결과값 추가 getResults로 바꿈
 
-
-            System.out.println(calculator.results.toString()); //출력
+            System.out.println(calculator.getResults().toString()); //출력 getResults로 바꿈
 
 
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
             answer = sc.next();
             if (answer.equals("remove")) {
-                calculator.results.remove(0); //삭제
+                calculator.removeResult(0); //삭제 removeResult로 바꿈
                 System.out.println("가장 먼저 저장된 연산 결과를 삭제하였습니다");
-                System.out.println(calculator.results.toString()); //확인 출력
             }
 
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             answer = sc.next();
             if (answer.equals("inquiry")) {
-                for (int number:calculator.results){
-                    System.out.print(number + " ");
+                for (int number: calculator.getResults()){
+                    System.out.print("연산 결과 : "+number + " "); // 연산 결과가 그냥 나왔었는데 뭔지는 알려주고 나오게 함
                 }
-                System.out.println(calculator.results.toString()); //출력
+                System.out.println(calculator.getResults().toString()); //출력 getResults로 바꿈
             }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
