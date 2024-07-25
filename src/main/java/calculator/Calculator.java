@@ -50,4 +50,12 @@ public class Calculator {
     public void removeResult(int idx) { // removeResult로 App에서 remove 삭제 연산하는 곳
         this.results.remove(idx);
     }
+
+    public void inquiryResults() { // inquiryResults로 결과 조회
+        /* 구현 */
+        for (int number: getResults()){
+            System.out.println("연산 결과 : "+number + " "); // 줄바꿈이 있게 나올 수 있도록 함
+        }
+        System.out.println(getResults().toString()); // 연산 결과 results에 잘 들어가있는지 한 번 더 확인
+    }
 }

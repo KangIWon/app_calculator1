@@ -34,10 +34,7 @@ public class App {
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             answer = sc.next();
             if (answer.equals("inquiry")) {
-                for (int number: calculator.getResults()){
-                    System.out.print("연산 결과 : "+number + " "); // 연산 결과가 그냥 나왔었는데 뭔지는 알려주고 나오게 함
-                }
-                System.out.println(calculator.getResults().toString()); //출력 getResults로 바꿈
+                calculator.inquiryResults(); // inquiryResults로 출력
             }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
