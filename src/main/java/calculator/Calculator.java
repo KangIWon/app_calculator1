@@ -2,8 +2,14 @@ package calculator;
 import java.util.ArrayList;
 
 public class Calculator {
-    /* 연산 결과를 저장하는 컬렉션 타입 필드를 외부에서 직접 접근 하지 못하도록 수정*/
-    private ArrayList<Integer> results = new ArrayList<>(); //private로 수정
+    /* 연산 결과를 저장하는 컬렉션 타입 필드가 생성자를 통해 초기화 되도록 변경 */
+    private ArrayList<Integer> results;
+
+    /* 생성자 구현 */
+    public Calculator(ArrayList<Integer> results) {
+        this.results = results;
+        // 생성자를 선언하는데 매개변수명과 객체의 필드명이 동일하므로 this를 써줌.
+    }
 
     public int calculate(int num1, int num2, char operator) {
 
