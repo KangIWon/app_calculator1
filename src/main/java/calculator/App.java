@@ -6,7 +6,10 @@ public class App {
 
     public static void main(String[] args) {
         // 산술 연산
-        ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator(new ArrayList<>());
+        // 들어가는 거 바꿔주기
+        ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator(new ArrayList<>(),
+                new AddOperator(), new SubtractOperator(), new MultiplyOperator(), new DivideOperator(),
+                new ModOperator());
         // 원 넓이 연산
         CircleCalculator circleCalculator = new CircleCalculator(new ArrayList<>());
         Scanner sc = new Scanner(System.in);
@@ -22,7 +25,7 @@ public class App {
                 System.out.print("두 번째 숫자를 입력하세요: ");
                 int num2 = sc.nextInt();
 
-                System.out.print("사칙연산 기호를 입력하세요: "); //+, -, *, /
+                System.out.print("사칙연산 기호를 입력하세요: "); //+, -, *, /, %
                 char operator = sc.next().charAt(0);
                 // double 타입으로 바꿔주고 calculator->arithmeticCalculator로 바꿔줌
                 double result = arithmeticCalculator.calculate(num1, num2, operator);
