@@ -63,8 +63,8 @@ public class ArithmeticCalculator extends Calculator {
             default:
                 // 오류 메시지 출력
                 System.out.println("기호 입력이 잘못됬습니다.");
-                //throw new Exception("기호 입력이 잘못됬습니다.");
-                break;
+                throw new UnsupportedOperationException("기호 입력이 잘못됬습니다.");
+                //UnsupportedOperationException
         }
 
         return result;
